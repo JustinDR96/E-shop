@@ -1,0 +1,31 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif; /* Choisissez une police par défaut */
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none; /* Supprime les puces des listes */
+}
+
+a {
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: inherit; /* Utilise la couleur du texte par défaut */
+}
+
+img {
+  max-width: 100%; /* Assure que les images ne débordent pas */
+  height: auto; /* Maintient le ratio d'aspect */
+}
+
+button {
+  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+}
