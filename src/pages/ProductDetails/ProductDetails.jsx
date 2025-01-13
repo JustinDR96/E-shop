@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchProductById } from "../../services/api";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import "./ProductDetails.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -22,10 +23,14 @@ const ProductDetails = () => {
   return (
     <div className="product-details">
       <img src={product.image} alt={product.title} />
-      <h1>{product.title}</h1>
-      <p>{product.description}</p>
-      <p>${product.price.toFixed(2)}</p>
-      <button onClick={() => addToCart(product)}>Add to Cart</button>
+      <div className="product-info">
+        <h1>{product.title}</h1>
+        <p>{product.description}</p>
+        <div className="product-price">
+          <p>${product.price.toFixed(2)}</p>
+        </div>
+        <button onClick={() => addToCart(product)}>Add to Cart</button>
+      </div>
     </div>
   );
 };

@@ -8,12 +8,15 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [randomProduct, setRandomProduct] = useState(null);
 
   useEffect(() => {
     const getProducts = async () => {
       const productsData = await fetchProducts();
       setProducts(productsData);
       setFilteredProducts(productsData);
+      const randomIndex = Math.floor(Math.random() * productsData.length);
+      setRandomProduct(productsData[randomIndex]);
     };
 
     const getCategories = async () => {
@@ -53,21 +56,9 @@ const Home = () => {
           </div>
         </div>
         <div className="hero-image">
-          <img src="/headphones.jpg" alt="Headphones" />
-          <div className="social-icons">
-            <a href="#">
-              <span>📷</span>
-            </a>
-            <a href="#">
-              <span>👤</span>
-            </a>
-            <a href="#">
-              <span>🐦</span>
-            </a>
-          </div>
-          <div className="secondary-image">
-            <img src="/perfume.jpg" alt="Perfume" />
-          </div>
+          {randomProduct && (
+            <img src={randomProduct.image} alt={randomProduct.title} />
+          )}
         </div>
       </div>
 
@@ -90,10 +81,6 @@ const Home = () => {
             See all
           </li>
         </ul>
-        <div className="navigation-arrows">
-          <button className="prev">←</button>
-          <button className="next">→</button>
-        </div>
       </div>
 
       {/* Products Grid */}
@@ -101,18 +88,6 @@ const Home = () => {
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-      </div>
-
-      {/* Shoe Banner */}
-      <div className="shoe-banner">
-        <div className="banner-content">
-          <h2>Latest stylish shoe</h2>
-          <p>Men 2020 collection shoe</p>
-          <button className="see-all-btn">See all</button>
-        </div>
-        <div className="banner-image">
-          <img src="/shoe.png" alt="Latest Shoe" />
-        </div>
       </div>
     </div>
   );

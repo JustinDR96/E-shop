@@ -7,6 +7,10 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import Navbar from "./components/Navbar/Navbar";
 import { CartProvider } from "./context/CartContext";
 import AllProductsPage from "./pages/AllProductsPage/AllProductsPage";
+import Users from "./pages/Users/Users";
+import Footer from "./components/Footer/Footer";
+import Checkout from "./pages/Checkout/Checkout";
+import OrderConfirmation from "./pages/OrderConfirmation/OrderConfirmation";
 
 const App = () => (
   <CartProvider>
@@ -18,7 +22,11 @@ const App = () => (
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/category/:category" element={<CategoryPage />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
       </Routes>
+      <Footer />
     </Router>
   </CartProvider>
 );

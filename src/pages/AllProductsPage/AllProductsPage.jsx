@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { fetchProducts } from "../../services/api";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { CartContext } from "../../context/CartContext";
+import "./AllProductsPage.css";
 
 const AllProductsPage = () => {
   const { addToCart } = useContext(CartContext);
@@ -23,7 +24,8 @@ const AllProductsPage = () => {
 
   return (
     <div>
-      <h1>Tous les Produits</h1>
+      <h1>All Products</h1>
+
       <div className="product-list">
         {products.map((product) => (
           <ProductCard
