@@ -3,15 +3,23 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar-title h1 {
-  color: #333;
-  font-size: 24px;
-  font-weight: bold;
+  color: #111;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ff4b6e, #8c4fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .navbar-title a {
@@ -25,13 +33,30 @@
 
 .navbar-links a {
   text-decoration: none;
-  color: #666;
-  font-weight: 500;
+  color: #333;
+  font-weight: 600;
+  position: relative;
   transition: color 0.3s ease;
+  padding: 5px 0;
 }
 
 .navbar-links a:hover {
   color: #ff4b6e;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #ff4b6e, #8c4fff);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
 }
 
 .navbar-icons {
@@ -42,7 +67,15 @@
 
 .navbar-icons a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 24px;
+  color: #333;
+  position: relative;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.navbar-icons a:hover {
+  color: #ff4b6e;
+  transform: scale(1.1);
 }
 
 .cart-icon {
@@ -53,11 +86,13 @@
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: #ff4b6e;
+  background: linear-gradient(135deg, #ff4b6e, #8c4fff);
   color: white;
   font-size: 12px;
+  font-weight: 600;
   padding: 2px 6px;
   border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .search-icon {
@@ -130,22 +165,30 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    gap: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .navbar-links.open {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
   }
 
   .navbar-links a {
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .navbar-links a::after {
+    display: none;
   }
 }
 

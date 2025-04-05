@@ -46,12 +46,14 @@ const Home = () => {
       <div className="hero-section">
         <div className="hero-content">
           <h1>
-            Get the best product
-            <br />
-            at your home
+            Découvrez des produits <span>exceptionnels</span> pour votre style
+            de vie
           </h1>
           <div className="search-container">
-            <input type="text" placeholder="Search your favorite product" />
+            <input
+              type="text"
+              placeholder="Recherchez vos produits préférés..."
+            />
             <span className="search-icon">🔍</span>
           </div>
         </div>

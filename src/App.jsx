@@ -11,6 +11,8 @@ import Users from "./pages/Users/Users";
 import Footer from "./components/Footer/Footer";
 import Checkout from "./pages/Checkout/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation/OrderConfirmation";
+import Service from "./pages/Service/Service";
+import Contact from "./pages/Contact/Contact";
 
 const App = () => (
   <CartProvider>
@@ -25,6 +27,8 @@ const App = () => (
         <Route path="/users" element={<Users />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

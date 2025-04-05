@@ -6,10 +6,25 @@
 }
 
 html,
-body {
+body,
+#root {
   height: 100%;
+}
+
+body {
   font-family: Arial, sans-serif; /* Choisissez une police par défaut */
   line-height: 1.5;
+  min-height: 100vh; /* Hauteur minimale de la fenêtre visible */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 ul {
